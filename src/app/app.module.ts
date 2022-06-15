@@ -80,6 +80,8 @@ import { NzUploadModule } from 'ng-zorro-antd/upload';
 import { NzResizableModule } from 'ng-zorro-antd/resizable';
 import { NzPipesModule } from 'ng-zorro-antd/pipes';
 
+import { TodoListService } from './todo-list/todo-list.service';
+
 
 registerLocaleData(en);
 
@@ -164,7 +166,7 @@ registerLocaleData(en);
     NzResizableModule,
     NzPipesModule,
   ],
-  providers: [{ provide: NZ_I18N, useValue: en_US }],
+  providers: [{ provide: NZ_I18N, useValue: en_US }, TodoListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
