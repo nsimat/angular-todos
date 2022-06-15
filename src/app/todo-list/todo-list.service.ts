@@ -20,7 +20,7 @@ export class TodoListService {
   }
 
   find(id: number): Observable<Todo>{
-    return this.http.get<Todo>(`${this.resourceUrl}/{id}`);
+    return this.http.get<Todo>(`${this.resourceUrl}/${id}`);
   }
 
   findAll(): Observable<Todo[]>{
