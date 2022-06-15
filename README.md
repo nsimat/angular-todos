@@ -1,6 +1,7 @@
 # AngularTodos
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3. 
+Its main goal is about building an Angular UI with Angular and the library ng-zorro as a frontend for a RESTful API created with Spring Boot REST or ASP.NET Core Web API.
 
 ## Development server
 
