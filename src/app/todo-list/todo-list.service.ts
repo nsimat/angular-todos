@@ -27,6 +27,10 @@ export class TodoListService {
     return this.http.get<Todo[]>(this.resourceUrl);
   }
 
+  delete(id: number | undefined): Observable<HttpResponse<any>>{
+    return this.http.delete<any>(`${this.resourceUrl}/${id}`);
+  }
+
   private convert(todo: Todo): Todo{
     const copy: Todo = Object.assign({}, todo);
     return copy;
