@@ -19,6 +19,14 @@ export class TodoListService {
     return this.http.put<Todo>(`${this.resourceUrl}/${copy.id}`, copy);
   }
 
+  find(id: number): Observable<Todo>{
+    return this.http.get<Todo>(`${this.resourceUrl}/{id}`);
+  }
+
+  findAll(): Observable<Todo[]>{
+    return this.http.get<Todo[]>(this.resourceUrl);
+  }
+
   private convert(todo: Todo): Todo{
     const copy: Todo = Object.assign({}, todo);
     return copy;
