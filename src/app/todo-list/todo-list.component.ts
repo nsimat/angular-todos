@@ -22,6 +22,8 @@ export class TodoListComponent implements OnInit {
   }
 
   changeStatus(todo: Todo) {
+    console.log('changeStatus of todo ->', todo);
+    todo.completed = !todo.completed;
     this.todoListService.update(todo)
       .subscribe(() => {
         this.todos$ = this.todoListService.findAll();

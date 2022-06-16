@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class TodoListService {
-  private resourceUrl = 'http://192.168.1.4:8081/api/v1/toodos';
+  private resourceUrl = 'http://192.168.1.4:8081/api/v1/todos';
 
   constructor(private http: HttpClient) { }
 
@@ -16,6 +16,7 @@ export class TodoListService {
 
   update(todo: Todo): Observable<Todo>{
     const copy = this.convert(todo);
+    console.log('update of todo ->', todo);
     return this.http.put<Todo>(`${this.resourceUrl}/${copy.id}`, copy);
   }
 

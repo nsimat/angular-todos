@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -7,6 +7,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./todo-form.component.scss']
 })
 export class TodoFormComponent implements OnInit {
+  @Input() refresh!: () => void;
+  
   validateForm!: FormGroup;
 
   submitForm(value: { title: string, completed: boolean }): void {
