@@ -14,6 +14,8 @@
                     <nz-switch
                       [ngModel]="todo.completed"
                       (click)="changeStatus(todo)"
+                      [nzCheckedChildren]="checkedTemplate"
+                      [nzUnCheckedChildren]="unCheckedTemplate"
                       nz-tooltip
                       nzTooltipTitle="Change Todo Status"
                     >
@@ -27,12 +29,14 @@
                       nz-popconfirm
                       nzPopconfirmTitle="Are you sure you want to delete?"
                       nzPopconfirmPlacement="top"
-                      (nzOnConfirm)=deleteTodo(todo)
+                      (nzOnConfirm)="deleteTodo(todo)"
                       (nzOnCancel)="cancel()"
-                      >
+                    >
                       <i nz-icon nzType="delete"></i>
                     </button>
                   </nz-list-item-action>
+                  <ng-template #checkedTemplate><i nz-icon nzType="check"></i></ng-template>
+                  <ng-template #unCheckedTemplate><i nz-icon nzType="close"></i></ng-template>
                 </ul>
               </ng-container>
             </nz-list-item>
